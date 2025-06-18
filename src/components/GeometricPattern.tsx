@@ -1,7 +1,7 @@
 
 import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Torus, MeshGradientMaterial } from '@react-three/drei';
+import { Torus } from '@react-three/drei';
 import * as THREE from 'three';
 
 const AnimatedTorus = ({ position }: { position: [number, number, number] }) => {
