@@ -1,8 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import HeroBanner from "@/components/HeroBanner";
 import { 
   ArrowRight, 
   Code, 
@@ -80,7 +80,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen">
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md border-b border-cyan-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,37 +108,8 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <Badge className="bg-cyan-100 text-cyan-700 mb-6">Digital Powerhouse Agency</Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Turn Your Dream Online Business into
-            <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent block">
-              Pixel-Perfect Reality
-            </span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Crafting next-gen digital experiences for you that captivate, convert, and connect.
-          </p>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-            Welcome to VAR PIXELS, your one-stop digital powerhouse agency where creativity fuels technology. 
-            From stunning websites and sleek mobile apps to results-driven digital marketing campaigns, 
-            we design and deliver experiences that not only look exceptional but also perform flawlessly.
-            Whether you're a startup chasing visibility or an established brand seeking digital transformation, 
-            we design solutions tailored to your goals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3">
-              Let's Create Something Extraordinary
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="lg" className="border-cyan-200 text-cyan-700 hover:bg-cyan-50 px-8 py-3">
-              View Our Work
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Hero Banner with 3D Elements */}
+      <HeroBanner />
 
       {/* Services Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
