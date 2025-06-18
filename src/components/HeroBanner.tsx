@@ -2,7 +2,7 @@
 import React from 'react';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code } from "lucide-react";
+import { ArrowRight, Code, LogIn, UserPlus } from "lucide-react";
 
 const HeroBanner = () => {
   return (
@@ -28,24 +28,17 @@ const HeroBanner = () => {
           </h1>
           
           <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-            Crafting next-gen digital experiences for you that captivate, convert, and connect. Welcome to VAR PIXELS, your one-stop digital powerhouse agency where creativity fuels technology.
-          </p>
-          
-          <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-            From stunning websites and sleek mobile apps to results-driven digital marketing campaigns, we design and deliver experiences that not only look exceptional but also perform flawlessly.
-          </p>
-
-          <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-            Whether you're a startup chasing visibility or an established brand seeking digital transformation, we design solutions tailored to your goals.
+            Crafting next-gen digital experiences for you that captivate, convert, and connect.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3 group">
-              Get Started
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <LogIn className="mr-2 h-4 w-4" />
+              Login
             </Button>
-            <Button variant="outline" size="lg" className="border-cyan-200 text-cyan-700 hover:bg-cyan-50 px-8 py-3">
-              View Our Work
+            <Button variant="outline" size="lg" className="border-cyan-200 text-cyan-700 hover:bg-cyan-50 px-8 py-3 group">
+              <UserPlus className="mr-2 h-4 w-4" />
+              Sign Up
             </Button>
           </div>
           
@@ -66,25 +59,26 @@ const HeroBanner = () => {
           </div>
         </div>
         
-        {/* Right Content - 3D Card */}
+        {/* Right Content - Enhanced 3D Card */}
         <div className="relative">
           <div className="relative group">
-            {/* 3D Card Container */}
+            {/* 3D Card Container with enhanced effects */}
             <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 hover:-rotate-2 transition-all duration-500 hover:shadow-3xl">
               
-              {/* Floating geometric shapes */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl rotate-12 opacity-80 animate-bounce"></div>
-              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-60 animate-pulse"></div>
+              {/* Enhanced floating geometric shapes */}
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl rotate-12 opacity-80 animate-bounce shadow-xl"></div>
+              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-60 animate-pulse shadow-lg"></div>
+              <div className="absolute top-1/3 -right-8 w-8 h-8 bg-gradient-to-br from-pink-400 to-red-400 rounded-lg rotate-45 opacity-50 animate-spin shadow-md" style={{animationDuration: '6s'}}></div>
               
               {/* Card Header */}
               <div className="flex items-center justify-between mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center transform group-hover:rotate-180 transition-transform duration-500">
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center transform group-hover:rotate-180 transition-transform duration-500 shadow-lg">
                   <Code className="h-6 w-6 text-white" />
                 </div>
                 <div className="flex space-x-1">
-                  <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
-                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse delay-500"></div>
-                  <div className="w-3 h-3 bg-indigo-400 rounded-full animate-pulse delay-1000"></div>
+                  <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-sm"></div>
+                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse delay-500 shadow-sm"></div>
+                  <div className="w-3 h-3 bg-indigo-400 rounded-full animate-pulse delay-1000 shadow-sm"></div>
                 </div>
               </div>
               
@@ -93,15 +87,15 @@ const HeroBanner = () => {
                 <h3 className="text-2xl font-bold text-gray-900">Web Development</h3>
                 <p className="text-gray-600">Modern & Responsive</p>
                 
-                {/* Progress bars */}
+                {/* Enhanced progress bars */}
                 <div className="space-y-3">
                   <div>
                     <div className="flex justify-between text-sm text-gray-600 mb-1">
                       <span>Design</span>
                       <span>95%</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full w-[95%] animate-pulse"></div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 shadow-inner">
+                      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full w-[95%] animate-pulse shadow-sm"></div>
                     </div>
                   </div>
                   
@@ -110,8 +104,8 @@ const HeroBanner = () => {
                       <span>Development</span>
                       <span>90%</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full w-[90%] animate-pulse delay-500"></div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 shadow-inner">
+                      <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full w-[90%] animate-pulse delay-500 shadow-sm"></div>
                     </div>
                   </div>
                   
@@ -120,25 +114,26 @@ const HeroBanner = () => {
                       <span>Optimization</span>
                       <span>88%</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full w-[88%] animate-pulse delay-1000"></div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 shadow-inner">
+                      <div className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full w-[88%] animate-pulse delay-1000 shadow-sm"></div>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Gradient overlay for 3D effect */}
+              {/* Enhanced gradient overlay for 3D effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-cyan-50/20 rounded-3xl pointer-events-none"></div>
             </div>
             
-            {/* Background glow */}
+            {/* Enhanced background glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-200 to-blue-200 rounded-3xl blur-xl opacity-30 -z-10 transform group-hover:scale-110 transition-transform duration-500"></div>
           </div>
           
-          {/* Floating elements around the card */}
-          <div className="absolute top-20 -left-8 w-8 h-8 bg-cyan-400 rounded-lg rotate-45 opacity-60 animate-spin" style={{animationDuration: '8s'}}></div>
-          <div className="absolute bottom-16 -right-4 w-6 h-6 bg-blue-500 rounded-full opacity-70 animate-bounce delay-1000"></div>
-          <div className="absolute top-8 right-16 w-4 h-4 bg-indigo-500 rounded-sm rotate-12 opacity-50 animate-pulse"></div>
+          {/* Enhanced floating elements around the card */}
+          <div className="absolute top-20 -left-8 w-8 h-8 bg-cyan-400 rounded-lg rotate-45 opacity-60 animate-spin shadow-lg" style={{animationDuration: '8s'}}></div>
+          <div className="absolute bottom-16 -right-4 w-6 h-6 bg-blue-500 rounded-full opacity-70 animate-bounce delay-1000 shadow-md"></div>
+          <div className="absolute top-8 right-16 w-4 h-4 bg-indigo-500 rounded-sm rotate-12 opacity-50 animate-pulse shadow-sm"></div>
+          <div className="absolute bottom-32 left-2 w-5 h-5 bg-purple-400 rounded-full opacity-40 animate-bounce delay-2000 shadow-sm"></div>
         </div>
       </div>
     </section>
