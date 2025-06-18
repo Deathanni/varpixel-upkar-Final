@@ -15,6 +15,7 @@ const Portfolio = () => {
 
   const projects = [
     {
+      id: "ayodhya-skates",
       title: "The Ayodhya Skates",
       description: "Complete branding, website, and digital marketing for Ayodhya's premier skating academy — enhancing their online presence and attracting local skating enthusiasts.",
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
@@ -24,6 +25,7 @@ const Portfolio = () => {
       github: "#"
     },
     {
+      id: "dubey-misthan",
       title: "Dubey Misthan Bhandar",
       description: "Designed and developed a high-conversion, user-friendly website for one of the region's oldest sweet shops, integrating online ordering and local SEO optimization.",
       image: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=800&h=600&fit=crop",
@@ -33,6 +35,7 @@ const Portfolio = () => {
       github: "#"
     },
     {
+      id: "antardarshnam",
       title: "AntarDarshnam",
       description: "A spiritual wellness platform brought to life through a minimalist design, reflecting peace and mindfulness resulting in increased user engagement and followers.",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
@@ -42,6 +45,7 @@ const Portfolio = () => {
       github: "#"
     },
     {
+      id: "portfolio-website",
       title: "Portfolio Website",
       description: "Crafted a sleek, personal portfolio for law professionals, blending aesthetics with functionality to showcase their work and influence clients.",
       image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop",
@@ -63,22 +67,25 @@ const Portfolio = () => {
       {/* Navigation */}
       <Navigation currentPage="portfolio" />
 
-      {/* 3D Background Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-cyan-200/30 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-48 h-48 bg-blue-200/30 rounded-full blur-xl animate-bounce" style={{animationDuration: '4s'}}></div>
-      <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-indigo-200/20 rounded-lg rotate-45 animate-spin" style={{animationDuration: '12s'}}></div>
+      {/* Enhanced 3D Background Elements */}
+      <div className="absolute top-20 left-10 w-36 h-36 bg-gradient-to-br from-cyan-200/35 to-blue-200/35 rounded-full blur-xl animate-pulse floating-bg"></div>
+      <div className="absolute bottom-20 right-20 w-52 h-52 bg-gradient-to-br from-blue-200/35 to-indigo-200/35 rounded-full blur-xl animate-bounce floating-bg" style={{animationDuration: '4s'}}></div>
+      <div className="absolute top-1/3 right-1/4 w-20 h-20 bg-gradient-to-br from-indigo-200/25 to-purple-200/25 rounded-lg rotate-45 animate-spin floating-bg" style={{animationDuration: '12s'}}></div>
+      <div className="absolute bottom-1/3 left-1/4 w-28 h-28 bg-gradient-to-br from-emerald-200/25 to-teal-200/25 rounded-full animate-pulse floating-bg" style={{animationDelay: '1s'}}></div>
+      <div className="absolute top-10 right-1/3 w-16 h-16 bg-gradient-to-br from-orange-200/25 to-yellow-200/25 rounded-xl rotate-12 animate-bounce floating-bg" style={{animationDelay: '2s', animationDuration: '3s'}}></div>
+      <div className="absolute bottom-40 left-10 w-24 h-24 bg-gradient-to-br from-pink-200/25 to-rose-200/25 rounded-lg animate-spin floating-bg" style={{animationDuration: '10s', animationDelay: '1.5s'}}></div>
 
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto text-center">
-          <Badge className="bg-cyan-100 text-cyan-700 mb-6">Our Work</Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <Badge className="bg-cyan-100 text-cyan-700 mb-6 floating-badge">Our Work</Badge>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 floating-title">
             Our
             <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent block">
               Portfolio
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 floating-text">
             Every project is a unique story and we're passionate about shaping yours into a digital masterpiece. 
             Explore our collection of successful projects that showcase our expertise.
           </p>
@@ -111,7 +118,7 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {filteredProjects.map((project, index) => (
-              <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 project-card">
+              <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 project-card" style={{animationDelay: `${index * 0.2}s`}}>
                 <div className="aspect-video overflow-hidden relative">
                   <img 
                     src={project.image} 
@@ -145,12 +152,21 @@ const Portfolio = () => {
                     ))}
                   </div>
                   <div className="flex items-center justify-between">
-                    <Button variant="ghost" className="text-cyan-600 hover:text-blue-600 p-0">
-                      View Details
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </Button>
+                    <Link to={`/portfolio/${project.id}`}>
+                      <Button variant="ghost" className="text-cyan-600 hover:text-blue-600 p-0 floating-link">
+                        View Details
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
+                
+                {/* Enhanced 3D Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-100/25 to-blue-100/25 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 transform translate-x-3 translate-y-3"></div>
+                
+                {/* Floating particles */}
+                <div className="absolute -top-3 -right-3 w-6 h-6 bg-cyan-400/30 rounded-full animate-pulse project-particle" style={{animationDelay: `${index * 0.4}s`}}></div>
+                <div className="absolute -bottom-3 -left-3 w-4 h-4 bg-blue-400/30 rounded-lg rotate-45 animate-bounce project-particle" style={{animationDelay: `${index * 0.6}s`, animationDuration: '3s'}}></div>
               </Card>
             ))}
           </div>
@@ -261,10 +277,35 @@ const Portfolio = () => {
       <style>{`
         .project-card {
           transition: all 0.3s ease;
+          animation: projectFloat 5s ease-in-out infinite;
         }
         
         .project-card:hover {
-          transform: translateY(-5px);
+          transform: translateY(-5px) perspective(1000px) rotateX(5deg);
+        }
+        
+        .floating-bg {
+          animation: floatBackground 8s ease-in-out infinite;
+        }
+        
+        .floating-badge {
+          animation: floatBadge 3s ease-in-out infinite;
+        }
+        
+        .floating-title {
+          animation: floatTitle 4s ease-in-out infinite;
+        }
+        
+        .floating-text {
+          animation: floatText 5s ease-in-out infinite;
+        }
+        
+        .floating-link {
+          animation: linkFloat 2s ease-in-out infinite;
+        }
+        
+        .project-particle {
+          animation: projectParticleFloat 4s ease-in-out infinite;
         }
         
         .stats-3d {
@@ -282,6 +323,69 @@ const Portfolio = () => {
         
         .stats-3d:nth-child(4) {
           animation-delay: -3s;
+        }
+        
+        @keyframes projectFloat {
+          0%, 100% {
+            transform: perspective(1000px) translateY(0px) rotateX(0deg);
+          }
+          50% {
+            transform: perspective(1000px) translateY(-8px) rotateX(2deg);
+          }
+        }
+        
+        @keyframes floatBackground {
+          0%, 100% {
+            transform: translateY(0px) scale(1);
+          }
+          50% {
+            transform: translateY(-20px) scale(1.05);
+          }
+        }
+        
+        @keyframes floatBadge {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+        
+        @keyframes floatTitle {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+        
+        @keyframes floatText {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-3px);
+          }
+        }
+        
+        @keyframes linkFloat {
+          0%, 100% {
+            transform: translateX(0px);
+          }
+          50% {
+            transform: translateX(3px);
+          }
+        }
+        
+        @keyframes projectParticleFloat {
+          0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-6px) rotate(15deg);
+          }
         }
         
         @keyframes stats-float {
