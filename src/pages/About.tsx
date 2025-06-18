@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 import { 
   Users,
   Target,
@@ -15,7 +16,9 @@ import {
   Code,
   Brain,
   TrendingUp,
-  Palette
+  Palette,
+  Eye,
+  Lightbulb
 } from "lucide-react";
 
 const About = () => {
@@ -66,60 +69,18 @@ const About = () => {
     }
   ];
 
-  const values = [
-    {
-      icon: Target,
-      title: "Innovation",
-      description: "We constantly push boundaries and embrace cutting-edge technologies to deliver exceptional solutions."
-    },
-    {
-      icon: Heart,
-      title: "Quality",
-      description: "Every project receives our full attention to detail, ensuring the highest standards of quality and performance."
-    },
-    {
-      icon: Users,
-      title: "Collaboration",
-      description: "We work closely with our clients as partners, ensuring transparent communication throughout the project."
-    },
-    {
-      icon: Award,
-      title: "Excellence",
-      description: "We strive for excellence in everything we do, from code quality to customer service and support."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100">
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-cyan-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link to="/" className="flex-shrink-0">
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  VAR PIXELS
-                </h1>
-              </Link>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <Link to="/" className="text-cyan-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</Link>
-                <Link to="/services" className="text-cyan-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</Link>
-                <Link to="/portfolio" className="text-cyan-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Portfolio</Link>
-                <Link to="/about" className="bg-cyan-100 text-cyan-900 px-3 py-2 rounded-md text-sm font-medium">About</Link>
-                <Link to="/contact" className="text-cyan-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</Link>
-              </div>
-            </div>
-            <Button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white">
-              Get Quote
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation currentPage="about" />
+
+      {/* 3D Background Elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-cyan-200/30 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-48 h-48 bg-blue-200/30 rounded-full blur-xl animate-bounce" style={{animationDuration: '4s'}}></div>
+      <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-indigo-200/20 rounded-lg rotate-45 animate-spin" style={{animationDuration: '12s'}}></div>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -141,13 +102,18 @@ const About = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3">
-                  Meet Our Team
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="lg" className="border-cyan-200 text-cyan-700 hover:bg-cyan-50 px-8 py-3">
-                  Our Portfolio
-                </Button>
+                <Link to="/services">
+                  <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3">
+                    Get Started Today
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link to="/portfolio">
+                  <Button variant="outline" size="lg" className="border-cyan-200 text-cyan-700 hover:bg-cyan-50 px-8 py-3">
+                    <Eye className="mr-2 h-4 w-4" />
+                    Our Portfolio
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -163,19 +129,38 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission Statement */}
+      {/* Mission & Vision Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center">
-            <Card className="mission-card max-w-4xl mx-auto">
-              <CardContent className="p-12">
+          <div className="text-center mb-16">
+            <Badge className="bg-cyan-100 text-cyan-700 mb-6">Our Purpose</Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Mission & Vision
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="mission-card">
+              <CardContent className="p-8">
                 <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-6">
                   <Target className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  "To empower local and global brands through creativity-driven technology and purposeful design, 
-                  building experiences that engage, inspire, and convert."
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Our Mission</h3>
+                <p className="text-lg text-gray-600 leading-relaxed text-center">
+                  To empower local and global brands through creativity-driven technology and purposeful design, 
+                  building experiences that engage, inspire, and convert.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="vision-card">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Lightbulb className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Our Vision</h3>
+                <p className="text-lg text-gray-600 leading-relaxed text-center">
+                  To become the leading digital transformation partner, recognized globally for innovation, 
+                  quality, and our ability to turn ambitious ideas into successful digital realities.
                 </p>
               </CardContent>
             </Card>
@@ -183,36 +168,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="bg-cyan-100 text-cyan-700 mb-6">Our Values</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              What Drives Us
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our core values guide every decision we make and every project we undertake.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 value-card">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <value.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{value.title}</h3>
-                  <p className="text-gray-600">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Team Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="bg-cyan-100 text-cyan-700 mb-6">Our Visionaries</Badge>
@@ -265,13 +222,17 @@ const About = () => {
             Let's discuss how we can help transform your digital presence and achieve your business goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-cyan-600 hover:bg-gray-100 px-8 py-3">
-              Get Started Today
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 px-8 py-3">
-              Learn More
-            </Button>
+            <Link to="/services">
+              <Button size="lg" className="bg-white text-cyan-600 hover:bg-gray-100 px-8 py-3">
+                Get Started Today
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 px-8 py-3">
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -290,21 +251,12 @@ const About = () => {
           }
         }
         
-        .mission-card {
+        .mission-card, .vision-card {
           transform: perspective(1000px);
           transition: all 0.3s ease;
         }
         
-        .mission-card:hover {
-          transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
-        }
-        
-        .value-card {
-          transform: perspective(1000px);
-          transition: all 0.3s ease;
-        }
-        
-        .value-card:hover {
+        .mission-card:hover, .vision-card:hover {
           transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
         }
         

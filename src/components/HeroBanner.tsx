@@ -2,14 +2,17 @@
 import React from 'react';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, LogIn, UserPlus } from "lucide-react";
+import { ArrowRight, Code, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroBanner = () => {
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100">
-      {/* Background decorative elements */}
-      <div className="absolute top-10 left-10 w-32 h-32 bg-cyan-200/30 rounded-full blur-xl"></div>
-      <div className="absolute bottom-20 right-20 w-48 h-48 bg-blue-200/30 rounded-full blur-xl"></div>
+      {/* Enhanced 3D Background decorative elements */}
+      <div className="absolute top-10 left-10 w-32 h-32 bg-cyan-200/30 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-48 h-48 bg-blue-200/30 rounded-full blur-xl animate-bounce" style={{animationDuration: '4s'}}></div>
+      <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-indigo-200/20 rounded-lg rotate-45 animate-spin" style={{animationDuration: '12s'}}></div>
+      <div className="absolute bottom-1/4 left-1/3 w-16 h-16 bg-purple-200/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
@@ -32,27 +35,31 @@ const HeroBanner = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3 group">
-              <LogIn className="mr-2 h-4 w-4" />
-              Login
-            </Button>
-            <Button variant="outline" size="lg" className="border-cyan-200 text-cyan-700 hover:bg-cyan-50 px-8 py-3 group">
-              <UserPlus className="mr-2 h-4 w-4" />
-              Sign Up
-            </Button>
+            <Link to="/services">
+              <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3 group">
+                <ArrowRight className="mr-2 h-4 w-4" />
+                Get Started
+              </Button>
+            </Link>
+            <Link to="/portfolio">
+              <Button variant="outline" size="lg" className="border-cyan-200 text-cyan-700 hover:bg-cyan-50 px-8 py-3 group">
+                <Eye className="mr-2 h-4 w-4" />
+                View Our Work
+              </Button>
+            </Link>
           </div>
           
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 pt-8">
-            <div className="text-center">
+            <div className="text-center stats-float">
               <div className="text-2xl font-bold text-cyan-600">50+</div>
               <div className="text-sm text-gray-600">Projects Completed</div>
             </div>
-            <div className="text-center">
+            <div className="text-center stats-float" style={{animationDelay: '0.5s'}}>
               <div className="text-2xl font-bold text-cyan-600">98%</div>
               <div className="text-sm text-gray-600">Client Satisfaction</div>
             </div>
-            <div className="text-center">
+            <div className="text-center stats-float" style={{animationDelay: '1s'}}>
               <div className="text-2xl font-bold text-cyan-600">24/7</div>
               <div className="text-sm text-gray-600">Support Available</div>
             </div>
@@ -63,12 +70,12 @@ const HeroBanner = () => {
         <div className="relative">
           <div className="relative group">
             {/* 3D Card Container with enhanced effects */}
-            <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 hover:-rotate-2 transition-all duration-500 hover:shadow-3xl">
+            <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 hover:-rotate-2 transition-all duration-500 hover:shadow-3xl floating-card">
               
               {/* Enhanced floating geometric shapes */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl rotate-12 opacity-80 animate-bounce shadow-xl"></div>
-              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-60 animate-pulse shadow-lg"></div>
-              <div className="absolute top-1/3 -right-8 w-8 h-8 bg-gradient-to-br from-pink-400 to-red-400 rounded-lg rotate-45 opacity-50 animate-spin shadow-md" style={{animationDuration: '6s'}}></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl rotate-12 opacity-80 animate-bounce shadow-xl floating-shape"></div>
+              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full opacity-60 animate-pulse shadow-lg floating-shape" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/3 -right-8 w-8 h-8 bg-gradient-to-br from-pink-400 to-red-400 rounded-lg rotate-45 opacity-50 animate-spin shadow-md floating-shape" style={{animationDuration: '6s', animationDelay: '2s'}}></div>
               
               {/* Card Header */}
               <div className="flex items-center justify-between mb-6">
@@ -95,7 +102,7 @@ const HeroBanner = () => {
                       <span>95%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 shadow-inner">
-                      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full w-[95%] animate-pulse shadow-sm"></div>
+                      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full w-[95%] animate-pulse shadow-sm progress-bar"></div>
                     </div>
                   </div>
                   
@@ -105,7 +112,7 @@ const HeroBanner = () => {
                       <span>90%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 shadow-inner">
-                      <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full w-[90%] animate-pulse delay-500 shadow-sm"></div>
+                      <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full w-[90%] animate-pulse delay-500 shadow-sm progress-bar"></div>
                     </div>
                   </div>
                   
@@ -115,7 +122,7 @@ const HeroBanner = () => {
                       <span>88%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 shadow-inner">
-                      <div className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full w-[88%] animate-pulse delay-1000 shadow-sm"></div>
+                      <div className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full w-[88%] animate-pulse delay-1000 shadow-sm progress-bar"></div>
                     </div>
                   </div>
                 </div>
@@ -130,12 +137,79 @@ const HeroBanner = () => {
           </div>
           
           {/* Enhanced floating elements around the card */}
-          <div className="absolute top-20 -left-8 w-8 h-8 bg-cyan-400 rounded-lg rotate-45 opacity-60 animate-spin shadow-lg" style={{animationDuration: '8s'}}></div>
-          <div className="absolute bottom-16 -right-4 w-6 h-6 bg-blue-500 rounded-full opacity-70 animate-bounce delay-1000 shadow-md"></div>
-          <div className="absolute top-8 right-16 w-4 h-4 bg-indigo-500 rounded-sm rotate-12 opacity-50 animate-pulse shadow-sm"></div>
-          <div className="absolute bottom-32 left-2 w-5 h-5 bg-purple-400 rounded-full opacity-40 animate-bounce delay-2000 shadow-sm"></div>
+          <div className="absolute top-20 -left-8 w-8 h-8 bg-cyan-400 rounded-lg rotate-45 opacity-60 animate-spin shadow-lg floating-element" style={{animationDuration: '8s'}}></div>
+          <div className="absolute bottom-16 -right-4 w-6 h-6 bg-blue-500 rounded-full opacity-70 animate-bounce delay-1000 shadow-md floating-element"></div>
+          <div className="absolute top-8 right-16 w-4 h-4 bg-indigo-500 rounded-sm rotate-12 opacity-50 animate-pulse shadow-sm floating-element" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute bottom-32 left-2 w-5 h-5 bg-purple-400 rounded-full opacity-40 animate-bounce delay-2000 shadow-sm floating-element"></div>
         </div>
       </div>
+
+      <style>{`
+        .stats-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        .floating-card {
+          animation: cardFloat 6s ease-in-out infinite;
+        }
+        
+        .floating-shape {
+          animation: shapeFloat 4s ease-in-out infinite;
+        }
+        
+        .floating-element {
+          animation: elementFloat 5s ease-in-out infinite;
+        }
+        
+        .progress-bar {
+          animation: progressGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+        
+        @keyframes cardFloat {
+          0%, 100% {
+            transform: translateY(0px) perspective(1000px) rotateX(0deg);
+          }
+          50% {
+            transform: translateY(-10px) perspective(1000px) rotateX(2deg);
+          }
+        }
+        
+        @keyframes shapeFloat {
+          0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-8px) rotate(5deg);
+          }
+        }
+        
+        @keyframes elementFloat {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-6px);
+          }
+        }
+        
+        @keyframes progressGlow {
+          0%, 100% {
+            box-shadow: 0 0 5px rgba(6, 182, 212, 0.3);
+          }
+          50% {
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+          }
+        }
+      `}</style>
     </section>
   );
 };

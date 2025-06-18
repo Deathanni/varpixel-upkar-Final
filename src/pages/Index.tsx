@@ -1,8 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 import HeroBanner from "@/components/HeroBanner";
 import Introduction from "@/components/Introduction";
 import { 
@@ -86,32 +86,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-cyan-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link to="/" className="flex-shrink-0">
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  VAR PIXELS
-                </h1>
-              </Link>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <Link to="/" className="bg-cyan-100 text-cyan-900 px-3 py-2 rounded-md text-sm font-medium">Home</Link>
-                <Link to="/services" className="text-cyan-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</Link>
-                <Link to="/portfolio" className="text-cyan-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Portfolio</Link>
-                <Link to="/blog" className="text-cyan-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</Link>
-                <Link to="/about" className="text-cyan-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</Link>
-                <Link to="/contact" className="text-cyan-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</Link>
-              </div>
-            </div>
-            <Button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white">
-              Get Started
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation currentPage="home" />
 
       {/* Hero Banner with 3D Elements */}
       <HeroBanner />
@@ -282,10 +257,12 @@ const Index = () => {
           <p className="text-xl text-cyan-100 mb-8">
             Let's discuss your project and bring your ideas to life.
           </p>
-          <Button size="lg" className="bg-white text-cyan-600 hover:bg-gray-100 px-8 py-3">
-            Request a Free Consultation
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <Link to="/contact">
+            <Button size="lg" className="bg-white text-cyan-600 hover:bg-gray-100 px-8 py-3">
+              Request a Free Consultation
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </section>
 
