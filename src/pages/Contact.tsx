@@ -15,7 +15,8 @@ import {
   Send,
   MessageCircle,
   Users,
-  Headphones
+  Headphones,
+  Globe
 } from "lucide-react";
 
 const Contact = () => {
@@ -36,38 +37,36 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: Mail,
-      title: "Email",
-      details: "hello@varpixels.com",
-      subtitle: "Send us an email anytime"
+      icon: MapPin,
+      title: "Office Address",
+      details: "Var Pixels, Ayodhya, India",
+      subtitle: "Visit our headquarters"
     },
     {
       icon: Phone,
       title: "Phone",
-      details: "+1 (555) 123-4567",
+      details: "+91-7905095656",
       subtitle: "Call us during business hours"
     },
     {
-      icon: MapPin,
-      title: "Office",
-      details: "123 Tech Street, Digital City, DC 12345",
-      subtitle: "Visit our headquarters"
+      icon: Mail,
+      title: "Email",
+      details: "varpixels@gmail.com",
+      subtitle: "Send us an email anytime"
     },
     {
-      icon: Clock,
-      title: "Business Hours",
-      details: "Mon - Fri: 9:00 AM - 6:00 PM EST",
-      subtitle: "We're here to help"
+      icon: Globe,
+      title: "Website",
+      details: "www.varpixels.com",
+      subtitle: "Visit our website"
     }
   ];
 
   const services = [
-    "Web Development",
-    "Mobile Development",
-    "UI/UX Design", 
-    "E-commerce Solutions",
-    "Digital Marketing",
-    "Maintenance & Support",
+    "Web Design & Development",
+    "App Design & Development",
+    "Digital Marketing", 
+    "Branding & SEO",
     "Other"
   ];
 
@@ -99,7 +98,7 @@ const Contact = () => {
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0">
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  VarPixels
+                  VAR PIXELS
                 </h1>
               </Link>
             </div>
@@ -124,14 +123,14 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto text-center">
           <Badge className="bg-cyan-100 text-cyan-700 mb-6">Contact Us</Badge>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Let's Start
+            Ready to Transform
             <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent block">
-              Your Project
+              Your Brand Digitally?
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Ready to transform your digital presence? We're here to help. Get in touch 
-            and let's discuss how we can bring your vision to life.
+            Let's discuss your project and bring your ideas to life. Get in touch 
+            and let's start creating something extraordinary together.
           </p>
         </div>
       </section>
@@ -218,7 +217,7 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
                         className="border-cyan-200 focus:border-cyan-500"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+91 XXXXX XXXXX"
                       />
                     </div>
                   </div>
@@ -260,7 +259,7 @@ const Contact = () => {
             {/* Additional Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Why Choose VarPixels?</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Why Choose VAR PIXELS?</h2>
                 <div className="space-y-6">
                   {[
                     {
@@ -298,8 +297,8 @@ const Contact = () => {
                   <div className="aspect-video bg-gradient-to-br from-cyan-100 to-blue-100 rounded-lg flex items-center justify-center">
                     <div className="text-center">
                       <MapPin className="h-12 w-12 text-cyan-600 mx-auto mb-2" />
-                      <p className="text-gray-600">Interactive Map</p>
-                      <p className="text-sm text-gray-500">123 Tech Street, Digital City</p>
+                      <p className="text-gray-600">Our Location</p>
+                      <p className="text-sm text-gray-500">Var Pixels, Ayodhya, India</p>
                     </div>
                   </div>
                 </CardContent>
@@ -341,11 +340,11 @@ const Contact = () => {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-cyan-100 mb-8">
-            Join hundreds of satisfied clients who trust VarPixels with their digital transformation.
+            Join hundreds of satisfied clients who trust VAR PIXELS with their digital transformation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-cyan-600 hover:bg-gray-100 px-8 py-3">
-              Schedule a Call
+              Request a Free Consultation
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 px-8 py-3">

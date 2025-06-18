@@ -11,16 +11,20 @@ import {
   ArrowRight,
   Linkedin,
   Twitter,
-  Github
+  Github,
+  Code,
+  Brain,
+  TrendingUp,
+  Palette
 } from "lucide-react";
 
 const About = () => {
   const team = [
     {
-      name: "Alex Johnson",
-      role: "CEO & Founder",
+      name: "Virendra Kumar",
+      role: "Founder & CEO",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-      bio: "10+ years of experience in leading digital transformation projects for Fortune 500 companies.",
+      bio: "B.Tech CSE, IERT Prayagraj. Visionary leader driving VAR PIXELS with a passion for cutting-edge technology and entrepreneurship.",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -28,21 +32,10 @@ const About = () => {
       }
     },
     {
-      name: "Sarah Chen",
-      role: "Lead Designer",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b332c877?w=400&h=400&fit=crop&crop=face",
-      bio: "Award-winning designer with expertise in creating user-centered digital experiences.",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        github: "#"
-      }
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "CTO",
+      name: "Divyansh Shrivastava",
+      role: "Technical Head",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      bio: "Full-stack developer and architect with expertise in scalable web applications.",
+      bio: "B.Tech CSE, IIT BHU | Ex-Senior Software Developer at Unify. Mastermind of architecture, coding, and building high-performance solutions.",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -50,10 +43,21 @@ const About = () => {
       }
     },
     {
-      name: "Emily Davis",
-      role: "Project Manager",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-      bio: "Expert in agile methodologies and ensuring successful project delivery on time.",
+      name: "Ajay Dubey",
+      role: "AI & ML Expert",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+      bio: "B.Tech IT, KIET Ghaziabad. Laying the foundation of intelligent systems with expertise in Machine Learning & Data Science.",
+      social: {
+        linkedin: "#",
+        twitter: "#",
+        github: "#"
+      }
+    },
+    {
+      name: "Riya Kumari",
+      role: "Marketing Head & Content Strategist",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b332c877?w=400&h=400&fit=crop&crop=face",
+      bio: "Computer Science Graduate, University of Delhi. Specialist in Digital Marketing, SEO, and UI/UX Design — making brands stand out in the crowded digital space.",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -85,39 +89,6 @@ const About = () => {
     }
   ];
 
-  const milestones = [
-    {
-      year: "2019",
-      title: "Company Founded",
-      description: "VarPixels was established with a vision to transform digital experiences."
-    },
-    {
-      year: "2020",
-      title: "First Major Client",
-      description: "Successfully delivered our first enterprise-level project."
-    },
-    {
-      year: "2021",
-      title: "Team Expansion",
-      description: "Grew our team to 15+ talented professionals across different domains."
-    },
-    {
-      year: "2022",
-      title: "100+ Projects",
-      description: "Reached the milestone of completing 100+ successful projects."
-    },
-    {
-      year: "2023",
-      title: "Industry Recognition",
-      description: "Received multiple awards for our innovative solutions and client satisfaction."
-    },
-    {
-      year: "2024",
-      title: "Global Expansion",
-      description: "Expanded our services globally with clients across 5+ countries."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100">
       {/* Navigation */}
@@ -127,7 +98,7 @@ const About = () => {
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0">
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  VarPixels
+                  VAR PIXELS
                 </h1>
               </Link>
             </div>
@@ -157,12 +128,16 @@ const About = () => {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   We Are
                   <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent block">
-                    VarPixels
+                    VAR PIXELS
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  A passionate team of designers, developers, and digital strategists dedicated to 
-                  transforming your ideas into remarkable digital experiences that drive growth and success.
+                  At VAR PIXELS, we turn ideas into interactive realities. As a full-stack agency specializing in 
+                  Web Development, App Design, UI/UX Innovation, Branding, and Digital Marketing, we craft digital 
+                  ecosystems that captivate users and elevate brands.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Every project is a unique story and we're passionate about shaping yours into a digital masterpiece.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -188,31 +163,19 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Mission Statement */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card className="mission-card">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-6">
-                  <Target className="h-6 w-6 text-white" />
+          <div className="text-center">
+            <Card className="mission-card max-w-4xl mx-auto">
+              <CardContent className="p-12">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Target className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  To empower businesses with innovative digital solutions that drive growth, 
-                  enhance user experiences, and create lasting value in an ever-evolving digital landscape.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="vision-card">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-6">
-                  <Award className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  To be the leading digital transformation partner, recognized globally for our 
-                  innovative solutions, exceptional quality, and commitment to client success.
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  "To empower local and global brands through creativity-driven technology and purposeful design, 
+                  building experiences that engage, inspire, and convert."
                 </p>
               </CardContent>
             </Card>
@@ -248,50 +211,16 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Team Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="bg-cyan-100 text-cyan-700 mb-6">Our Journey</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Company Timeline
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From humble beginnings to industry recognition - our growth story.
-            </p>
-          </div>
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 to-indigo-500"></div>
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                    <div className="timeline-card">
-                      <div className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-lg font-bold py-2 px-4 rounded-full inline-block mb-4">
-                        {milestone.year}
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
-                      <p className="text-gray-600">{milestone.description}</p>
-                    </div>
-                  </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-cyan-500 rounded-full"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="bg-cyan-100 text-cyan-700 mb-6">Our Team</Badge>
+            <Badge className="bg-cyan-100 text-cyan-700 mb-6">Our Visionaries</Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Meet the Team
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Talented professionals dedicated to delivering exceptional results.
+              Talented professionals dedicated to delivering exceptional results and shaping the future of digital experiences.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -361,12 +290,12 @@ const About = () => {
           }
         }
         
-        .mission-card, .vision-card {
+        .mission-card {
           transform: perspective(1000px);
           transition: all 0.3s ease;
         }
         
-        .mission-card:hover, .vision-card:hover {
+        .mission-card:hover {
           transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
         }
         
@@ -377,23 +306,6 @@ const About = () => {
         
         .value-card:hover {
           transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
-        }
-        
-        .timeline-card {
-          animation: timeline-float 4s ease-in-out infinite;
-        }
-        
-        .timeline-card:nth-child(2n) {
-          animation-delay: -2s;
-        }
-        
-        @keyframes timeline-float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-5px);
-          }
         }
         
         .team-card {

@@ -12,80 +12,44 @@ import {
 const Portfolio = () => {
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "A comprehensive e-commerce solution with advanced features including real-time inventory, payment processing, and customer analytics.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "Redis"],
-      category: "Web Development",
+      title: "The Ayodhya Skates",
+      description: "Complete branding, website, and digital marketing for Ayodhya's premier skating academy — enhancing their online presence and attracting local skating enthusiasts.",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
+      tech: ["React", "Node.js", "MongoDB", "Digital Marketing", "Branding"],
+      category: "Web Development & Branding",
       link: "#",
       github: "#"
     },
     {
-      title: "Mobile Banking App",
-      description: "Secure and user-friendly mobile banking application with biometric authentication and real-time transaction monitoring.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
-      tech: ["React Native", "Firebase", "Redux", "Biometric Auth"],
-      category: "Mobile Development",
+      title: "Dubey Misthan Bhandar",
+      description: "Designed and developed a high-conversion, user-friendly website for one of the region's oldest sweet shops, integrating online ordering and local SEO optimization.",
+      image: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=800&h=600&fit=crop",
+      tech: ["E-commerce", "SEO", "Online Ordering", "Local Marketing"],
+      category: "E-commerce Development",
       link: "#",
       github: "#"
     },
     {
-      title: "Healthcare Dashboard",
-      description: "Comprehensive analytics dashboard for healthcare professionals with patient management and data visualization.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop",
-      tech: ["Vue.js", "D3.js", "Express", "PostgreSQL"],
-      category: "Web Development",
+      title: "AntarDarshnam",
+      description: "A spiritual wellness platform brought to life through a minimalist design, reflecting peace and mindfulness resulting in increased user engagement and followers.",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+      tech: ["React", "UI/UX Design", "Content Strategy", "Social Media"],
+      category: "Web Development & Design",
       link: "#",
       github: "#"
     },
     {
-      title: "Food Delivery App",
-      description: "Complete food delivery solution with real-time tracking, payment integration, and restaurant management system.",
-      image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&h=600&fit=crop",
-      tech: ["Flutter", "Firebase", "Google Maps", "Stripe"],
-      category: "Mobile Development",
-      link: "#",
-      github: "#"
-    },
-    {
-      title: "SaaS Dashboard",
-      description: "Modern SaaS platform with subscription management, analytics, and multi-tenant architecture.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      tech: ["Next.js", "Prisma", "Stripe", "TailwindCSS"],
-      category: "Web Development",
-      link: "#",
-      github: "#"
-    },
-    {
-      title: "Real Estate Platform",
-      description: "Property listing platform with advanced search, virtual tours, and agent management system.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
-      tech: ["React", "Node.js", "MySQL", "AWS"],
-      category: "Web Development",
-      link: "#",
-      github: "#"
-    },
-    {
-      title: "Fitness Tracking App",
-      description: "Comprehensive fitness tracking application with workout plans, nutrition tracking, and social features.",
-      image: "https://images.unsplash.com/photo-1571019613914-85f342c6a11e?w=800&h=600&fit=crop",
-      tech: ["React Native", "HealthKit", "Firebase", "Charts"],
-      category: "Mobile Development",
-      link: "#",
-      github: "#"
-    },
-    {
-      title: "Learning Management System",
-      description: "Complete LMS with course creation, student progress tracking, and interactive assessments.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-      tech: ["React", "Django", "PostgreSQL", "WebRTC"],
-      category: "Web Development",
+      title: "Portfolio Website",
+      description: "Crafted a sleek, personal portfolio for law professionals, blending aesthetics with functionality to showcase their work and influence clients.",
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop",
+      tech: ["React", "TailwindCSS", "Professional Design", "SEO"],
+      category: "Portfolio Development",
       link: "#",
       github: "#"
     }
   ];
 
-  const categories = ["All", "Web Development", "Mobile Development", "UI/UX Design"];
+  const categories = ["All", "Web Development & Branding", "E-commerce Development", "Web Development & Design", "Portfolio Development"];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100">
@@ -96,7 +60,7 @@ const Portfolio = () => {
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0">
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  VarPixels
+                  VAR PIXELS
                 </h1>
               </Link>
             </div>
@@ -127,8 +91,8 @@ const Portfolio = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Explore our collection of successful projects that showcase our expertise 
-            in web development, mobile apps, and digital solutions.
+            Every project is a unique story and we're passionate about shaping yours into a digital masterpiece. 
+            Explore our collection of successful projects that showcase our expertise.
           </p>
         </div>
       </section>
@@ -136,14 +100,14 @@ const Portfolio = () => {
       {/* Filter Tabs */}
       <section className="py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center space-x-4 mb-12">
+          <div className="flex justify-center space-x-4 mb-12 overflow-x-auto">
             {categories.map((category, index) => (
               <Button
                 key={index}
                 variant={index === 0 ? "default" : "outline"}
                 className={index === 0 
-                  ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white" 
-                  : "border-cyan-200 text-cyan-700 hover:bg-cyan-50"
+                  ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white whitespace-nowrap" 
+                  : "border-cyan-200 text-cyan-700 hover:bg-cyan-50 whitespace-nowrap"
                 }
               >
                 {category}
@@ -156,7 +120,7 @@ const Portfolio = () => {
       {/* Portfolio Grid */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 project-card">
                 <div className="aspect-video overflow-hidden relative">
@@ -204,6 +168,54 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="bg-cyan-100 text-cyan-700 mb-6">Client Feedback</Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              What Our Clients Say
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="p-6">
+              <CardContent className="p-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-xl">⭐</span>
+                  ))}
+                </div>
+                <p className="text-gray-600 mb-4 italic">
+                  "VAR PIXELS transformed our vision into a digital masterpiece. The team's professionalism, 
+                  creativity, and technical skill are unmatched."
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">Ravinder Kumar</p>
+                  <p className="text-sm text-gray-500">Founder, The Ayodhya Skates</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="p-6">
+              <CardContent className="p-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-xl">⭐</span>
+                  ))}
+                </div>
+                <p className="text-gray-600 mb-4 italic">
+                  "Their digital marketing strategy took our local brand to new heights. Highly recommended 
+                  for any business looking to grow online."
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">Ankit Dubey</p>
+                  <p className="text-sm text-gray-500">Owner, Dubey Misthan Bhandar</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600">
         <div className="max-w-7xl mx-auto">
@@ -217,9 +229,9 @@ const Portfolio = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: "100+", label: "Projects Completed", icon: "🚀" },
+              { number: "50+", label: "Projects Completed", icon: "🚀" },
               { number: "98%", label: "Client Satisfaction", icon: "⭐" },
-              { number: "50+", label: "Happy Clients", icon: "👥" },
+              { number: "25+", label: "Happy Clients", icon: "👥" },
               { number: "24/7", label: "Support Available", icon: "🔧" }
             ].map((stat, index) => (
               <div key={index} className="stats-3d">

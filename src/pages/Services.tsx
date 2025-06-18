@@ -15,99 +15,62 @@ import {
   Users,
   Clock,
   Award,
-  Target
+  Target,
+  TrendingUp,
+  Search
 } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
       icon: Globe,
-      title: "Web Development",
-      description: "Custom websites and web applications built with cutting-edge technologies",
+      title: "Web Design & Development",
+      description: "Bespoke websites built with user-centric design, lightning speed, and modern tech stacks. From corporate sites to eCommerce platforms, we craft web presences that drive results.",
       features: [
-        "Responsive Design",
-        "React & Next.js",
-        "Node.js Backend",
-        "Database Integration",
-        "API Development",
-        "Performance Optimization"
+        "Custom Web Development",
+        "E-Commerce Solutions", 
+        "CMS Platforms",
+        "Responsive Design"
       ],
       price: "Starting at $2,999",
       popular: false
     },
     {
       icon: Smartphone,
-      title: "Mobile Development",
-      description: "Native and cross-platform mobile applications for iOS and Android",
+      title: "App Design & Development",
+      description: "Intuitive, elegant, and scalable mobile apps that solve real problems and delight users across Android, iOS, and hybrid platforms.",
       features: [
-        "React Native",
-        "Flutter Development",
-        "iOS Development",
-        "Android Development",
-        "App Store Optimization",
-        "Push Notifications"
+        "Native & Cross-Platform Apps",
+        "UI/UX for Mobile",
+        "Maintenance & Support"
       ],
       price: "Starting at $4,999",
       popular: true
     },
     {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Beautiful, user-friendly designs that convert visitors into customers",
-      features: [
-        "User Research",
-        "Wireframing",
-        "Prototyping",
-        "Visual Design",
-        "Design Systems",
-        "Usability Testing"
-      ],
-      price: "Starting at $1,999",
-      popular: false
-    },
-    {
-      icon: Code,
-      title: "E-commerce Solutions",
-      description: "Complete online stores with payment integration and inventory management",
-      features: [
-        "Custom E-commerce",
-        "Shopify Development",
-        "WooCommerce",
-        "Payment Gateway",
-        "Inventory Management",
-        "Analytics Integration"
-      ],
-      price: "Starting at $3,999",
-      popular: false
-    },
-    {
-      icon: Zap,
+      icon: TrendingUp,
       title: "Digital Marketing",
-      description: "SEO, social media marketing, an online advertising strategies",
+      description: "Digital strategies that elevate your brand — from social media campaigns to pay-per-click and influencer outreach — tailored to get measurable growth and audience engagement.",
       features: [
-        "SEO Optimization",
-        "Social Media Marketing",
-        "PPC Campaigns",
+        "Social Media Management",
+        "Paid Ads",
         "Content Marketing",
-        "Email Marketing",
-        "Analytics & Reporting"
+        "Email Campaigns"
       ],
       price: "Starting at $1,499/month",
       popular: false
     },
     {
-      icon: Shield,
-      title: "Maintenance & Support",
-      description: "Ongoing support, updates, and security monitoring for your digital assets",
+      icon: Search,
+      title: "Branding & SEO",
+      description: "Building brand identities that last and optimizing digital presence for visibility, traffic, and conversions.",
       features: [
-        "24/7 Technical Support",
-        "Security Updates",
-        "Performance Monitoring",
-        "Regular Backups",
-        "Content Updates",
-        "Bug Fixes"
+        "Logo & Visual Identity",
+        "On-Page & Off-Page SEO",
+        "Google Rankings Boost",
+        "Brand Strategy Consulting"
       ],
-      price: "Starting at $299/month",
+      price: "Starting at $1,999",
       popular: false
     }
   ];
@@ -148,7 +111,7 @@ const Services = () => {
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0">
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  VarPixels
+                  VAR PIXELS
                 </h1>
               </Link>
             </div>
@@ -188,7 +151,7 @@ const Services = () => {
       {/* Services Grid */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <Card key={index} className={`group hover:shadow-xl transition-all duration-300 service-card relative ${service.popular ? 'border-cyan-300 ring-2 ring-cyan-200' : 'border-cyan-100'}`}>
                 {service.popular && (
@@ -266,10 +229,10 @@ const Services = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {[
-              { icon: Users, number: "200+", label: "Satisfied Clients" },
-              { icon: Code, number: "500+", label: "Projects Completed" },
+              { icon: Users, number: "50+", label: "Happy Clients" },
+              { icon: Code, number: "100+", label: "Projects Completed" },
               { icon: Clock, number: "5+", label: "Years Experience" },
-              { icon: Award, number: "50+", label: "Awards Won" }
+              { icon: Award, number: "25+", label: "Awards Won" }
             ].map((stat, index) => (
               <div key={index} className="stats-3d">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
