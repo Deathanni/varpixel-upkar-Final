@@ -20,21 +20,28 @@ const HeroBanner = () => {
           </Badge>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            Transform Your
+            Turn Your Dream
             <span className="block bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Digital Vision
+              Online Business
             </span>
-            Into Reality
+            into Pixel-Perfect Reality
           </h1>
           
           <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-            We create stunning websites, mobile apps, and digital experiences that drive results. 
-            From concept to launch, we're your trusted technology partner.
+            Crafting next-gen digital experiences for you that captivate, convert, and connect. Welcome to VAR PIXELS, your one-stop digital powerhouse agency where creativity fuels technology.
+          </p>
+          
+          <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
+            From stunning websites and sleek mobile apps to results-driven digital marketing campaigns, we design and deliver experiences that not only look exceptional but also perform flawlessly.
+          </p>
+
+          <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
+            Whether you're a startup chasing visibility or an established brand seeking digital transformation, we design solutions tailored to your goals.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3 group">
-              Start Your Project
+              Get Started
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="outline" size="lg" className="border-cyan-200 text-cyan-700 hover:bg-cyan-50 px-8 py-3">
