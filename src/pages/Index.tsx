@@ -1,8 +1,11 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import FloatingCube from "@/components/FloatingCube";
+import FloatingSphere from "@/components/FloatingSphere";
+import GeometricPattern from "@/components/GeometricPattern";
+import AnimatedBanner from "@/components/AnimatedBanner";
 import { 
   ArrowRight, 
   Code, 
@@ -81,6 +84,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100">
+      {/* Animated Banner */}
+      <AnimatedBanner />
+
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md border-b border-cyan-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,9 +114,20 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
+      {/* Hero Section with 3D Elements */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* 3D Background Elements */}
+        <div className="absolute top-10 left-10 opacity-60">
+          <FloatingSphere />
+        </div>
+        <div className="absolute top-20 right-20 opacity-50">
+          <FloatingCube />
+        </div>
+        <div className="absolute bottom-10 left-1/4 opacity-40">
+          <GeometricPattern />
+        </div>
+
+        <div className="max-w-7xl mx-auto text-center relative z-10">
           <Badge className="bg-cyan-100 text-cyan-700 mb-6">Digital Powerhouse Agency</Badge>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Turn Your Dream Online Business into
@@ -140,9 +157,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      {/* Services Section with 3D Element */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
+        <div className="absolute top-10 right-10 opacity-30">
+          <FloatingCube />
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-cyan-100 text-cyan-700 mb-6">Our Services</Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -180,9 +201,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Portfolio Preview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      {/* Portfolio Preview with 3D Background */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="absolute bottom-20 right-20 opacity-40">
+          <FloatingSphere />
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-cyan-100 text-cyan-700 mb-6">Our Work</Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -246,9 +271,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Blog Preview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      {/* Blog Preview with 3D Pattern */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="absolute top-10 left-10 opacity-30">
+          <GeometricPattern />
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-cyan-100 text-cyan-700 mb-6">Latest Insights</Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
