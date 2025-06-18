@@ -63,11 +63,7 @@ const HeroBanner = () => {
         <div className="relative">
           <div className="relative group">
             {/* 3D Card Container */}
-            <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform hover:rotate-y-12 hover:rotate-x-6 transition-all duration-500 hover:shadow-3xl" 
-                 style={{
-                   transformStyle: 'preserve-3d',
-                   perspective: '1000px'
-                 }}>
+            <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 hover:-rotate-2 transition-all duration-500 hover:shadow-3xl">
               
               {/* Floating geometric shapes */}
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl rotate-12 opacity-80 animate-bounce"></div>
@@ -80,8 +76,8 @@ const HeroBanner = () => {
                 </div>
                 <div className="flex space-x-1">
                   <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
-                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                  <div className="w-3 h-3 bg-indigo-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse delay-500"></div>
+                  <div className="w-3 h-3 bg-indigo-400 rounded-full animate-pulse delay-1000"></div>
                 </div>
               </div>
               
@@ -108,7 +104,7 @@ const HeroBanner = () => {
                       <span>90%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full w-[90%] animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                      <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full w-[90%] animate-pulse delay-500"></div>
                     </div>
                   </div>
                   
@@ -118,7 +114,7 @@ const HeroBanner = () => {
                       <span>88%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full w-[88%] animate-pulse" style={{animationDelay: '1s'}}></div>
+                      <div className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full w-[88%] animate-pulse delay-1000"></div>
                     </div>
                   </div>
                 </div>
@@ -134,7 +130,7 @@ const HeroBanner = () => {
           
           {/* Floating elements around the card */}
           <div className="absolute top-20 -left-8 w-8 h-8 bg-cyan-400 rounded-lg rotate-45 opacity-60 animate-spin" style={{animationDuration: '8s'}}></div>
-          <div className="absolute bottom-16 -right-4 w-6 h-6 bg-blue-500 rounded-full opacity-70 animate-bounce" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-16 -right-4 w-6 h-6 bg-blue-500 rounded-full opacity-70 animate-bounce delay-1000"></div>
           <div className="absolute top-8 right-16 w-4 h-4 bg-indigo-500 rounded-sm rotate-12 opacity-50 animate-pulse"></div>
         </div>
       </div>
