@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import HeroBanner from "@/components/HeroBanner";
 import Introduction from "@/components/Introduction";
+import ThreeDAnimations from "@/components/ThreeDAnimations";
 import { 
   ArrowRight, 
   Code, 
@@ -87,7 +88,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <Navigation currentPage="home" />
 
@@ -99,14 +100,9 @@ const Index = () => {
 
       {/* Services Section with Enhanced 3D Effects */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
-        {/* Enhanced 3D Background Elements */}
-        <div className="absolute top-10 left-10 w-36 h-36 bg-gradient-to-br from-cyan-200/30 to-blue-200/30 rounded-full blur-xl animate-pulse floating-bg"></div>
-        <div className="absolute bottom-20 right-20 w-52 h-52 bg-gradient-to-br from-blue-200/30 to-indigo-200/30 rounded-full blur-xl animate-bounce floating-bg" style={{animationDuration: '4s'}}></div>
-        <div className="absolute top-1/3 right-1/4 w-20 h-20 bg-gradient-to-br from-purple-200/25 to-pink-200/25 rounded-lg rotate-45 animate-spin floating-bg" style={{animationDuration: '10s'}}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-28 h-28 bg-gradient-to-br from-emerald-200/25 to-teal-200/25 rounded-full animate-pulse floating-bg" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute top-20 right-10 w-14 h-14 bg-gradient-to-br from-orange-200/25 to-yellow-200/25 rounded-xl rotate-12 animate-bounce floating-bg" style={{animationDelay: '2s', animationDuration: '3s'}}></div>
+        <ThreeDAnimations />
         
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-cyan-100 text-cyan-700 mb-6 floating-badge">Our Services</Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6 floating-title">
@@ -119,9 +115,6 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 service-card relative" style={{animationDelay: `${index * 0.2}s`}}>
-                {/* Enhanced 3D Shadow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-100/30 to-blue-100/30 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 transform translate-x-2 translate-y-2"></div>
-                
                 <CardHeader>
                   <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg icon-3d">
                     <service.icon className="h-6 w-6 text-white" />
@@ -141,10 +134,6 @@ const Index = () => {
                     ))}
                   </ul>
                 </CardContent>
-                
-                {/* Additional floating particles */}
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-cyan-400/20 rounded-full animate-pulse particle" style={{animationDelay: `${index * 0.5}s`}}></div>
-                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-blue-400/20 rounded-full animate-bounce particle" style={{animationDelay: `${index * 0.7}s`, animationDuration: '2s'}}></div>
               </Card>
             ))}
           </div>
@@ -152,14 +141,10 @@ const Index = () => {
       </section>
 
       {/* Portfolio Preview with Enhanced 3D */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Enhanced 3D Background Elements */}
-        <div className="absolute top-20 left-1/4 w-28 h-28 bg-gradient-to-br from-indigo-200/25 to-purple-200/25 rounded-lg rotate-45 animate-spin floating-bg" style={{animationDuration: '12s'}}></div>
-        <div className="absolute bottom-10 right-1/3 w-20 h-20 bg-gradient-to-br from-purple-200/25 to-pink-200/25 rounded-full animate-pulse floating-bg"></div>
-        <div className="absolute top-1/2 left-10 w-16 h-16 bg-gradient-to-br from-green-200/20 to-emerald-200/20 rounded-xl animate-bounce floating-bg" style={{animationDelay: '1s', animationDuration: '5s'}}></div>
-        <div className="absolute bottom-1/3 right-20 w-24 h-24 bg-gradient-to-br from-yellow-200/20 to-orange-200/20 rounded-lg rotate-12 animate-spin floating-bg" style={{animationDuration: '8s', animationDelay: '2s'}}></div>
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden">
+        <ThreeDAnimations />
         
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-cyan-100 text-cyan-700 mb-6 floating-badge">Our Work</Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6 floating-title">
@@ -189,13 +174,6 @@ const Index = () => {
                     </Button>
                   </Link>
                 </CardContent>
-                
-                {/* 3D Card Enhancement */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-100/20 to-blue-100/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 transform translate-x-3 translate-y-3"></div>
-                
-                {/* Floating elements */}
-                <div className="absolute -top-3 -right-3 w-6 h-6 bg-cyan-400/30 rounded-full animate-pulse portfolio-particle" style={{animationDelay: `${index * 0.4}s`}}></div>
-                <div className="absolute -bottom-3 -left-3 w-4 h-4 bg-blue-400/30 rounded-lg rotate-45 animate-bounce portfolio-particle" style={{animationDelay: `${index * 0.6}s`, animationDuration: '3s'}}></div>
               </Card>
             ))}
           </div>
@@ -203,8 +181,10 @@ const Index = () => {
       </section>
 
       {/* Testimonials with Client Images */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+        <ThreeDAnimations />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-cyan-100 text-cyan-700 mb-6">Client Feedback</Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -240,13 +220,10 @@ const Index = () => {
       </section>
 
       {/* Blog Preview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Enhanced 3D Background for Blog Section */}
-        <div className="absolute top-10 left-20 w-32 h-32 bg-gradient-to-br from-violet-200/25 to-purple-200/25 rounded-full blur-xl animate-pulse floating-bg"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-pink-200/25 to-rose-200/25 rounded-full blur-xl animate-bounce floating-bg" style={{animationDuration: '6s'}}></div>
-        <div className="absolute top-1/2 right-1/3 w-18 h-18 bg-gradient-to-br from-emerald-200/20 to-teal-200/20 rounded-lg rotate-45 animate-spin floating-bg" style={{animationDuration: '14s'}}></div>
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden">
+        <ThreeDAnimations />
         
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-cyan-100 text-cyan-700 mb-6 floating-badge">Latest Insights</Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6 floating-title">
@@ -270,22 +247,13 @@ const Index = () => {
                 </Button>
               </Link>
             </CardContent>
-            
-            {/* 3D Blog Card Enhancement */}
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-100/20 to-blue-100/20 rounded-lg blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300 -z-10 transform translate-x-4 translate-y-4"></div>
           </Card>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 relative overflow-hidden">
-        {/* Enhanced 3D CTA Background */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 left-20 w-36 h-36 bg-white/10 rounded-full blur-xl animate-pulse floating-bg"></div>
-          <div className="absolute bottom-20 right-20 w-44 h-44 bg-white/10 rounded-full blur-xl animate-bounce floating-bg" style={{animationDuration: '5s'}}></div>
-          <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-white/5 rounded-lg rotate-45 animate-spin floating-bg" style={{animationDuration: '15s'}}></div>
-          <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-white/8 rounded-xl animate-pulse floating-bg" style={{animationDelay: '2s'}}></div>
-        </div>
+        <ThreeDAnimations />
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl font-bold text-white mb-6 floating-title">

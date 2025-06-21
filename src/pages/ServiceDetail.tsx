@@ -1,9 +1,9 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link, useParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import ThreeDAnimations from "@/components/ThreeDAnimations";
 import { 
   Code, 
   Smartphone, 
@@ -134,45 +134,14 @@ const ServiceDetail = () => {
   const service = serviceDetails[slug] || serviceDetails["web-development"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-white">
       <Navigation currentPage="services" />
 
-      {/* Enhanced 3D Background Elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-cyan-200/30 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-blue-200/30 rounded-full blur-xl animate-bounce" style={{animationDuration: '4s'}}></div>
-        <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-indigo-200/20 rounded-lg rotate-45 animate-spin" style={{animationDuration: '12s'}}></div>
-        
-        {/* 3D Cubes */}
-        <div className="absolute top-20 left-1/4 cube-container">
-          <div className="cube">
-            <div className="face front"></div>
-            <div className="face back"></div>
-            <div className="face right"></div>
-            <div className="face left"></div>
-            <div className="face top"></div>
-            <div className="face bottom"></div>
-          </div>
-        </div>
+      {/* Hero Section with proper background */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100">
+        <ThreeDAnimations />
 
-        <div className="absolute bottom-32 right-1/3 cube-container-small">
-          <div className="cube-small">
-            <div className="face-small front-small"></div>
-            <div className="face-small back-small"></div>
-            <div className="face-small right-small"></div>
-            <div className="face-small left-small"></div>
-            <div className="face-small top-small"></div>
-            <div className="face-small bottom-small"></div>
-          </div>
-        </div>
-
-        <div className="absolute top-1/2 left-16 w-20 h-20 border-4 border-cyan-300/40 rounded-full animate-spin-slow"></div>
-        <div className="absolute top-32 right-16 w-12 h-12 border-2 border-blue-400/50 rounded-full animate-bounce-slow"></div>
-      </div>
-
-      {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <service.icon className="h-10 w-10 text-white" />
@@ -201,9 +170,11 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* Service Details */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      {/* Service Details with white background */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+        <ThreeDAnimations />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Description */}
             <div>
@@ -245,9 +216,11 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      {/* Process with alternating background */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden">
+        <ThreeDAnimations />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Process</h2>
             <p className="text-xl text-gray-600">How we deliver exceptional results</p>
@@ -266,9 +239,11 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* CTA with white background */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+        <ThreeDAnimations />
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             Ready to Get Started?
           </h2>
@@ -290,84 +265,6 @@ const ServiceDetail = () => {
           </div>
         </div>
       </section>
-
-      <style>{`
-        /* 3D Cube Animations */
-        .cube-container {
-          width: 60px;
-          height: 60px;
-          perspective: 300px;
-          animation: float-rotate 8s ease-in-out infinite;
-        }
-
-        .cube-container-small {
-          width: 40px;
-          height: 40px;
-          perspective: 200px;
-          animation: float-rotate 6s ease-in-out infinite reverse;
-        }
-
-        .cube, .cube-small {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          transform-style: preserve-3d;
-          animation: rotate-3d 10s linear infinite;
-        }
-
-        .face, .face-small {
-          position: absolute;
-          border: 2px solid rgba(6, 182, 212, 0.3);
-          background: rgba(165, 243, 252, 0.1);
-          backdrop-filter: blur(4px);
-        }
-
-        .face {
-          width: 60px;
-          height: 60px;
-        }
-
-        .face-small {
-          width: 40px;
-          height: 40px;
-        }
-
-        .front { transform: rotateY(0deg) translateZ(30px); }
-        .back { transform: rotateY(180deg) translateZ(30px); }
-        .right { transform: rotateY(90deg) translateZ(30px); }
-        .left { transform: rotateY(-90deg) translateZ(30px); }
-        .top { transform: rotateX(90deg) translateZ(30px); }
-        .bottom { transform: rotateX(-90deg) translateZ(30px); }
-
-        .front-small { transform: rotateY(0deg) translateZ(20px); }
-        .back-small { transform: rotateY(180deg) translateZ(20px); }
-        .right-small { transform: rotateY(90deg) translateZ(20px); }
-        .left-small { transform: rotateY(-90deg) translateZ(20px); }
-        .top-small { transform: rotateX(90deg) translateZ(20px); }
-        .bottom-small { transform: rotateX(-90deg) translateZ(20px); }
-
-        @keyframes rotate-3d {
-          0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-          33% { transform: rotateX(120deg) rotateY(120deg) rotateZ(0deg); }
-          66% { transform: rotateX(240deg) rotateY(240deg) rotateZ(120deg); }
-          100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(240deg); }
-        }
-
-        @keyframes float-rotate {
-          0%, 100% { transform: translateY(0px) rotateZ(0deg); }
-          25% { transform: translateY(-10px) rotateZ(5deg); }
-          50% { transform: translateY(-5px) rotateZ(0deg); }
-          75% { transform: translateY(-15px) rotateZ(-5deg); }
-        }
-
-        .animate-spin-slow {
-          animation: spin 8s linear infinite;
-        }
-
-        .animate-bounce-slow {
-          animation: bounce 4s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 };
