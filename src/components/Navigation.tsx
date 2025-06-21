@@ -14,7 +14,12 @@ const Navigation = ({ currentPage }: NavigationProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0">
+            <Link to="/" className="flex-shrink-0 flex items-center gap-3">
+              <img 
+                src="/lovable-uploads/72b4dd92-0132-499f-83a3-49aeec050537.png" 
+                alt="VAR PIXELS Logo" 
+                className="h-8 w-auto"
+              />
               <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 VAR PIXELS
               </h1>
